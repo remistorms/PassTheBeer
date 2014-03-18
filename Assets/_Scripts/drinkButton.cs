@@ -5,7 +5,7 @@ public class drinkButton : MonoBehaviour {
 
 	public string drinkName;
 	public gameControl myControl;
-	public int throwForce = 100;
+	public int throwForce = 0;
 	public bool isPressed = false;
 
 	// Use this for initialization
@@ -17,34 +17,17 @@ public class drinkButton : MonoBehaviour {
 	void Update () 
 	
 	{
-		Debug.Log(throwForce);
 
-		if(isPressed)
+	}
+
+	public void OnPress(bool value)
+	{
+		myControl.ButtonIsPressed(value);
+		if(value == false)
 		{
-			//Start counting up the force each frame
-
-			throwForce += 5;
-			if(throwForce >= 500)
-			{
-				throwForce = 100;
-			}
+			myControl.SpawnDrink(drinkName);
 		}
-	}
-
-	void OnPress(bool buttonState)
-	{
-		isPressed = buttonState;
 
 	}
 
-	void OnClick()
-	{
-		myControl.SpawnDrink(drinkName,throwForce);
-		throwForce = 100;
-	}
-
-	void OnGUI()
-	{
-
-	}
 }
