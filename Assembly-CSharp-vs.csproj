@@ -800,6 +800,9 @@
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenShakeScale.cs" />
      <Compile Include="Assets\PlayMaker\Actions\iTween\iTweenStop.cs" />
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
+     <Compile Include="Assets\_Scripts\drinkButton.cs" />
+     <Compile Include="Assets\_Scripts\drinkScript.cs" />
+     <Compile Include="Assets\_Scripts\gameControl.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <Compile Include="Assets\uScript\uScriptRuntime\Nodes\Actions\Animation\uScriptAct_GetAnimationState.cs" />
      <Compile Include="Assets\uScript\uScriptRuntime\Nodes\Actions\Animation\uScriptAct_GetAnimations.cs" />
@@ -1508,6 +1511,7 @@
      <Compile Include="Assets\uScript\uScriptRuntime\Nodes\Events\uScript_Visibility.cs" />
      <Compile Include="Assets\uScript\uScriptRuntime\uScriptFlashStubs.cs" />
      <Compile Include="Assets\uScript\uScriptRuntime\uScriptUnityVersion.cs" />
+     <Compile Include="Assets\uScriptProjectFiles\uScriptUserTypes.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.5.4 r2.txt" />
      <None Include="Assets\Photon Unity Networking\PlayMaker\ReleaseNotes.txt" />
