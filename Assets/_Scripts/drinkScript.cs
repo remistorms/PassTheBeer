@@ -8,8 +8,9 @@ public class drinkScript : MonoBehaviour {
 	Rigidbody2D drinkRigidBody;
 	public float drinkPrice = 0.0f;
 
+
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
 		this.gameObject.AddComponent<Rigidbody2D>();
 		drinkRigidBody = this.gameObject.GetComponent<Rigidbody2D>();

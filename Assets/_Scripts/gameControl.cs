@@ -7,6 +7,7 @@ public class gameControl : MonoBehaviour {
 	public GameObject margarita;
 	public GameObject bloodyMary;
 	public GameObject drinkSpawner;
+	//public float Force = 10f;
 	public string typeOfDrink;
 
 	// Use this for initialization
@@ -17,35 +18,34 @@ public class gameControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if(Input.GetMouseButtonDown(0))
-		{
-			SpawnDrink(typeOfDrink);
-		}
+
 	}
 
 	// function to spawn drinks
-	public void SpawnDrink(string drinkType)
+	public void SpawnDrink(string drinkType, float throwForce)
 	{
 		switch (drinkType) 
 		
 		{
 		case "beer":
-				Instantiate(beer, drinkSpawner.transform.position, drinkSpawner.transform.rotation);
+			beer = Instantiate(beer, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
+			drinkScript be_drinkScriptRef = beer.GetComponent<drinkScript>();
+			beer.rigidbody2D.AddForce(new Vector2(throwForce , 0));
 			break;
 
 		case "margarita":
-			Instantiate(margarita, drinkSpawner.transform.position, drinkSpawner.transform.rotation);
+			margarita = Instantiate(margarita, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
+			drinkScript mr_drinkScriptRef = margarita.GetComponent<drinkScript>();
+			margarita.rigidbody2D.AddForce(new Vector2(throwForce , 0));
 			break;
 
 		case "bloodyMary":
-				Instantiate(bloodyMary, drinkSpawner.transform.position, drinkSpawner.transform.rotation);
+			bloodyMary = Instantiate(bloodyMary, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
+			drinkScript bm_drinkScriptRef = bloodyMary.GetComponent<drinkScript>();
+			bloodyMary.rigidbody2D.AddForce(new Vector2(throwForce , 0));
 			break;
 
 		} //cierre de switch
 	} //close SpawnDrinks
-
-	public static void MyStaticMethod()
-	{
-		Debug.Log("My static method has been called.");
-	}
+	
 }
