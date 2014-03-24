@@ -10,6 +10,7 @@ public class gameControl : MonoBehaviour {
 	public float force = 10f;
 	public int throwForce = 0;
 	public bool countForce = false;
+	public float playerScore = 0;
 	int lastForce;
 
 	void Awake()
@@ -79,6 +80,7 @@ public class gameControl : MonoBehaviour {
 	{
 		GUI.Box(new Rect(10,10,100,50), "Force =" + throwForce);
 		GUI.Box(new Rect(300, 10, 100, 50), "Last Shot = " + lastForce);
+		GUI.Box(new Rect(600, 10, 100, 50), "Score =" + playerScore);
 	}
 
 	public void ButtonIsPressed(bool value)

@@ -7,6 +7,8 @@ public class drinkScript : MonoBehaviour {
 	public float weight = 1.0f;
 	Rigidbody2D drinkRigidBody;
 	public float drinkPrice = 0.0f;
+	public int drinkID;
+	public bool hasStopped = false;
 
 
 	// Use this for initialization
@@ -18,7 +20,13 @@ public class drinkScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
 	
+	{
+		//Debug.Log("drink velocity is = " + drinkRigidBody.velocity);
+		if(drinkRigidBody.velocity.x == 0)
+		{
+			hasStopped = true;
+		}
 	}
 }

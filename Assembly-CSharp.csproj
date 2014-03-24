@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CharacterScript.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIFilledSprite.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIInputSaved.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UISlicedSprite.cs" />
