@@ -79,8 +79,8 @@ public class gameControl : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.Box(new Rect(10,10,100,50), "Force =" + throwForce);
-		GUI.Box(new Rect(300, 10, 100, 50), "Last Shot = " + lastForce);
-		GUI.Box(new Rect(600, 10, 100, 50), "Score =" + playerScore);
+		//GUI.Box(new Rect(150, 10, 100, 50), "Last Shot = " + lastForce);
+		GUI.Box(new Rect(120, 10, 100, 50), "Score =" + playerScore);
 	}
 
 	public void ButtonIsPressed(bool value)

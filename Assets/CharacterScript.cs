@@ -20,13 +20,14 @@ public class CharacterScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		Debug.Log("array legnth = " + myDrinkSprites.Length);
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			OrderDrink();
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		myDrinkScriptRef = other.GetComponent<drinkScript>();
 		if(myDrinkScriptRef.hasStopped == true)
@@ -36,7 +37,7 @@ public class CharacterScript : MonoBehaviour {
 			{
 				myControlRef.playerScore += 100;
 			}
-			
+
 			if(drinkWanted != myDrinkScriptRef.drinkID)
 			{
 				myControlRef.playerScore -= 100;
@@ -48,8 +49,12 @@ public class CharacterScript : MonoBehaviour {
 
 	void OrderDrink()
 	{
-		int drinkID = Random.Range(0,3);
+		int drinkID = Random.Range(0,myDrinkSprites.Length);
+		drinkWanted = drinkID;
+		drinkWantedSprite.sprite = myDrinkSprites[drinkID];
 
+
+		/*
 		switch(drinkID)
 		{
 		case 0:
@@ -72,6 +77,6 @@ public class CharacterScript : MonoBehaviour {
 			drinkWantedSprite.sprite = myDrinkSprites[2];
 
 			break;
-		}
+		}*/
 	}
 }
