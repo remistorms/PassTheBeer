@@ -39,7 +39,6 @@
 -define:ENABLE_PROFILER
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_OSX
-'Assets/CharacterSpawn.cs'
 'Assets/NGUI Upgrade Tools/Runtime/UIFilledSprite.cs'
 'Assets/NGUI Upgrade Tools/Runtime/UIInputSaved.cs'
 'Assets/NGUI Upgrade Tools/Runtime/UISlicedSprite.cs'
@@ -795,6 +794,9 @@
 'Assets/PlayMaker/Actions/iTween/iTweenStop.cs'
 'Assets/PlayMaker/Include/iTweenFSMEvents.cs'
 'Assets/_Scripts/CharacterScript.cs'
+'Assets/_Scripts/CharacterSpawn.cs'
+'Assets/_Scripts/CustomerScript.cs'
+'Assets/_Scripts/SelfDestroy.cs'
 'Assets/_Scripts/drinkButton.cs'
 'Assets/_Scripts/drinkScript.cs'
 'Assets/_Scripts/gameControl.cs'

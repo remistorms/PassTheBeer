@@ -14,7 +14,11 @@ public class drinkScript : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
-		this.gameObject.AddComponent<Rigidbody2D>();
+		if(this.gameObject.GetComponent<Rigidbody2D>() == null)
+		{
+			this.gameObject.AddComponent<Rigidbody2D>();
+		}
+
 		drinkRigidBody = this.gameObject.GetComponent<Rigidbody2D>();
 		drinkRigidBody.mass = weight;
 	}
@@ -28,6 +32,11 @@ public class drinkScript : MonoBehaviour {
 		{
 			hasStopped = true;
 		}
+	}
+
+	void OnTriggerStay2D(Collider2D other)
+	{
+		Debug.Log("Im touching " + other.name);
 	}
 	
 }

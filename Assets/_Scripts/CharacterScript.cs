@@ -28,7 +28,7 @@ public class CharacterScript : MonoBehaviour {
 		//OrderDrink();
 		CheckDrink();
 		Pay();
-		Leave();
+
 	}
 	
 	// Update is called once per frame
@@ -62,7 +62,7 @@ public class CharacterScript : MonoBehaviour {
 
 	void CheckDrink()
 	{
-		Debug.Log("Check Drink Function");
+		/*Debug.Log("Check Drink Function");
 
 
 		if(myDrinkScriptRef.hasStopped == true)
@@ -85,13 +85,13 @@ public class CharacterScript : MonoBehaviour {
 				Destroy(drinkObject, 0.2f);
 			}
 			
-		}
+		}*/
 	}
 
 	void Pay()
 	{
 		Debug.Log("Pay Function");
-		myControlRef.playerScore += myDrinkScriptRef.drinkPrice; 
+		//myControlRef.playerScore += myDrinkScriptRef.drinkPrice; 
 	}
 
 	void Leave()

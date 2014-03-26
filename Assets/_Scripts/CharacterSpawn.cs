@@ -31,4 +31,6 @@ public class CharacterSpawn : MonoBehaviour {
 
 		//bloodyMary = Instantiate(bloodyMary, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
 	}
+
+
 }
