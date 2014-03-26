@@ -803,6 +803,7 @@
      <Compile Include="Assets\_Scripts\CharacterScript.cs" />
      <Compile Include="Assets\_Scripts\CharacterSpawn.cs" />
      <Compile Include="Assets\_Scripts\CustomerScript.cs" />
+     <Compile Include="Assets\_Scripts\SeatsScript.cs" />
      <Compile Include="Assets\_Scripts\SelfDestroy.cs" />
      <Compile Include="Assets\_Scripts\drinkButton.cs" />
      <Compile Include="Assets\_Scripts\drinkScript.cs" />
