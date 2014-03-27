@@ -46,48 +46,6 @@ public class gameControl : MonoBehaviour {
 
 	}
 
-	// function to spawn drinks
-	public void SpawnDrink(string drinkName)
-	{
-		switch (drinkName) 
-		
-		{
-		case "beer":
-			beer = Instantiate(beer, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
-			beer.AddComponent<SelfDestroy>();
-			drinkScript be_drinkScriptRef = beer.GetComponent<drinkScript>();
-			beer.rigidbody2D.AddForce(new Vector2(throwForce * force , 0));
-			lastForce = throwForce;
-			throwForce = 0;
-			playerScore -= 2.5f;
-			FindDrinks();
-			break;
-
-		case "margarita":
-			margarita = Instantiate(margarita, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
-			margarita.AddComponent<SelfDestroy>();
-			drinkScript mr_drinkScriptRef = margarita.GetComponent<drinkScript>();
-			margarita.rigidbody2D.AddForce(new Vector2(throwForce * force , 0));
-			lastForce = throwForce;
-			throwForce = 0;
-			playerScore -= 4.0f;
-			FindDrinks();
-			break;
-
-		case "bloodyMary":
-			bloodyMary = Instantiate(bloodyMary, drinkSpawner.transform.position, drinkSpawner.transform.rotation) as GameObject;
-			bloodyMary.AddComponent<SelfDestroy>();
-			drinkScript bm_drinkScriptRef = bloodyMary.GetComponent<drinkScript>();
-			bloodyMary.rigidbody2D.AddForce(new Vector2(throwForce * force, 0));
-			lastForce = throwForce;
-			throwForce = 0;
-			playerScore -= 5.5f;
-			FindDrinks();
-			break;
-
-		} //cierre de switch
-	} //close SpawnDrinks
-
 
 	void OnGUI()
 	{

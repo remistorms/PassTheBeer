@@ -9,21 +9,19 @@ public class CustomerScript : MonoBehaviour {
 	float moveSpeed;
 	public GameObject myOccupiedSeat;
 	public GameObject baloon;
-	public SpriteRenderer drinkSpriteRenderer;
-	public Sprite[] drinkSprites;
 	public string drinkWanted;
 	public float waitingTime = 5f;
+	public MainDrinksScript mainDrinksScriptRef;
 
 
 	void Awake()
 	{
 		mySeatScriptRef = (GameObject.Find("BarSeats")).GetComponent<SeatsScript>();
 		customer = this.gameObject;
-
 		// Makes the baloon invisible at start
 		baloon.SetActive(false);
 		// Empties the current sprite slot
-		drinkSpriteRenderer.sprite = null;
+		mainDrinksScriptRef = (GameObject.Find("Drinks")).GetComponent<MainDrinksScript>();
 
 	}
 
@@ -70,13 +68,11 @@ public class CustomerScript : MonoBehaviour {
 	{
 		// Makes baloon visible
 		baloon.SetActive(true);
-		//Waits half a second
-
-		//Shows a random sprite from the list
-		drinkSpriteRenderer.sprite = drinkSprites[Random.Range(0, drinkSprites.Length)];
-		//gets the selected drink name and saves it as a string.
-		drinkWanted = drinkSpriteRenderer.sprite.name;
-
+		//Picks a random drink from the Drinks Object and displays it
+		int drinkID = Random.Range(0, mainDrinksScriptRef.allDrinks.Length);
+		mainDrinksScriptRef.DisplayDrink(mainDrinksScriptRef.allDrinks[drinkID],baloon.transform);
+		drinkWanted = mainDrinksScriptRef.allDrinks[drinkID].name;
+		drinkWanted = drinkWanted + "(Clone)";
 
 	}
 

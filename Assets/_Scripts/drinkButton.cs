@@ -3,31 +3,22 @@ using System.Collections;
 
 public class drinkButton : MonoBehaviour {
 
-	public string drinkName;
-	public gameControl myControl;
-	public int throwForce = 0;
-	public bool isPressed = false;
+	public MainDrinksScript mainDrinkScriptRef;
+	public GameObject buttonDrink;
+	public Transform spawnPoint;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	
+	void Awake()
+
 	{
 
 	}
 
-	public void OnPress(bool value)
+	void OnClick()
 	{
-		myControl.ButtonIsPressed(value);
-		if(value == false)
-		{
-			myControl.SpawnDrink(drinkName);
-		}
-
+		Debug.Log("I was clicked !!!");
+		mainDrinkScriptRef.SpawnDrink(buttonDrink, spawnPoint.transform);
 	}
+
+
 
 }

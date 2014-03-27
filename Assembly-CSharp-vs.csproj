@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MainDrinksScript.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIFilledSprite.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UIInputSaved.cs" />
      <Compile Include="Assets\NGUI Upgrade Tools\Runtime\UISlicedSprite.cs" />
@@ -802,6 +803,8 @@
      <Compile Include="Assets\PlayMaker\Include\iTweenFSMEvents.cs" />
      <Compile Include="Assets\_Scripts\CharacterScript.cs" />
      <Compile Include="Assets\_Scripts\CharacterSpawn.cs" />
+     <Compile Include="Assets\_Scripts\ChargeButtonScript.cs" />
+     <Compile Include="Assets\_Scripts\ChargeScript.cs" />
      <Compile Include="Assets\_Scripts\CustomerScript.cs" />
      <Compile Include="Assets\_Scripts\SeatsScript.cs" />
      <Compile Include="Assets\_Scripts\SelfDestroy.cs" />
