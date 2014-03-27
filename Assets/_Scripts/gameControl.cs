@@ -3,9 +3,9 @@ using System.Collections;
 
 public class gameControl : MonoBehaviour {
 
-	public GameObject beer;
-	public GameObject margarita;
-	public GameObject bloodyMary;
+	GameObject beer;
+	GameObject margarita;
+	GameObject bloodyMary;
 	public GameObject drinkSpawner;
 	public float force = 10f;
 	public int throwForce = 0;
@@ -14,7 +14,7 @@ public class gameControl : MonoBehaviour {
 	int lastForce;
 
 
-	void RestoreDrinks()
+	void FindDrinks()
 	{
 		beer = GameObject.Find("Beer");
 		margarita = GameObject.Find("Margarita");
@@ -24,7 +24,7 @@ public class gameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-	
+		FindDrinks();
 	}
 	
 	// Update is called once per frame
@@ -60,7 +60,7 @@ public class gameControl : MonoBehaviour {
 			lastForce = throwForce;
 			throwForce = 0;
 			playerScore -= 2.5f;
-			RestoreDrinks();
+			FindDrinks();
 			break;
 
 		case "margarita":
@@ -71,7 +71,7 @@ public class gameControl : MonoBehaviour {
 			lastForce = throwForce;
 			throwForce = 0;
 			playerScore -= 4.0f;
-			RestoreDrinks();
+			FindDrinks();
 			break;
 
 		case "bloodyMary":
@@ -82,7 +82,7 @@ public class gameControl : MonoBehaviour {
 			lastForce = throwForce;
 			throwForce = 0;
 			playerScore -= 5.5f;
-			RestoreDrinks();
+			FindDrinks();
 			break;
 
 		} //cierre de switch

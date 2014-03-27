@@ -8,12 +8,23 @@ public class CustomerScript : MonoBehaviour {
 	GameObject customer;
 	float moveSpeed;
 	public GameObject myOccupiedSeat;
+	public GameObject baloon;
+	public SpriteRenderer drinkSpriteRenderer;
+	public Sprite[] drinkSprites;
+	public string drinkWanted;
+	public float waitingTime = 5f;
 
 
 	void Awake()
 	{
 		mySeatScriptRef = (GameObject.Find("BarSeats")).GetComponent<SeatsScript>();
 		customer = this.gameObject;
+
+		// Makes the baloon invisible at start
+		baloon.SetActive(false);
+		// Empties the current sprite slot
+		drinkSpriteRenderer.sprite = null;
+
 	}
 
 	// Use this for initialization
@@ -22,11 +33,7 @@ public class CustomerScript : MonoBehaviour {
 		FindASeat();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	void FindASeat()
 	{
@@ -54,24 +61,39 @@ public class CustomerScript : MonoBehaviour {
 
 			}
 
-		else { Debug.Log("No more seats"); }
+		// If no seats available, destroy customer.
+		else { Destroy(customer, 0.1f); }
 
 	}
 
 	void OrderDrink()
 	{
+		// Makes baloon visible
+		baloon.SetActive(true);
+		//Waits half a second
+
+		//Shows a random sprite from the list
+		drinkSpriteRenderer.sprite = drinkSprites[Random.Range(0, drinkSprites.Length)];
+		//gets the selected drink name and saves it as a string.
+		drinkWanted = drinkSpriteRenderer.sprite.name;
+
 
 	}
 
 	void Leave()
 	{
-		moveSpeed = Random.Range(1.0f, 2.5f);
+		// Moves the character outside the bar at a random speed
+		moveSpeed = Random.Range(0.5f, 1.5f);
 		iTween.MoveTo(customer, iTween.Hash("x", -10, "speed", moveSpeed, "easetype", "linear", "oncomplete", "SelfDestroy", "oncompletetarget", customer));
+
+		// Returns the occupied seat back to the empty seats list
 		mySeatScriptRef.emptySeats.Add (myOccupiedSeat);
+		mySeatScriptRef.occupiedSeats.Remove(myOccupiedSeat);
 	}
 
 	void SelfDestroy()
 	{
-
+		Destroy(this.gameObject, 1);
 	}
+	
 }
