@@ -12,10 +12,15 @@ public class CustomerScript : MonoBehaviour {
 	public string drinkWanted;
 	public float waitingTime = 5f;
 	public MainDrinksScript mainDrinksScriptRef;
+	ScoreScript myScoreRef;
+	DrinkScript myDrinkScriptRef;
+	GameObject drinkTaken;
+	bool isPaid = false;
 
 
 	void Awake()
 	{
+		myScoreRef = GameObject.Find("MoneyLabel").GetComponent<ScoreScript>();
 		mySeatScriptRef = (GameObject.Find("BarSeats")).GetComponent<SeatsScript>();
 		customer = this.gameObject;
 		// Makes the baloon invisible at start
@@ -29,7 +34,6 @@ public class CustomerScript : MonoBehaviour {
 	void Start () 
 	{
 		FindASeat();
-
 	}
 
 
@@ -76,6 +80,30 @@ public class CustomerScript : MonoBehaviour {
 
 	}
 
+	public void CheckDrink(GameObject drinkReceived)
+	{
+
+		//DrinkScript myDrinkScriptRef = drinkReceived.GetComponent<DrinkScript>();
+		myDrinkScriptRef = drinkReceived.GetComponent<DrinkScript>();
+		if (drinkReceived.name == drinkWanted) 
+			{
+			drinkTaken = drinkReceived;
+
+			if (isPaid == false) 
+				{
+					Pay ();
+				}
+
+			}
+
+		else {
+			// This happens when customer doenst get his/her drink
+
+				}
+
+
+	}
+
 	void Leave()
 	{
 		// Moves the character outside the bar at a random speed
@@ -91,5 +119,14 @@ public class CustomerScript : MonoBehaviour {
 	{
 		Destroy(this.gameObject, 1);
 	}
-	
+
+	void Pay()
+	{
+
+		Debug.Log("Pay for your " + drinkTaken.name);
+		myScoreRef.myScore += myDrinkScriptRef.drinkPrice;
+		isPaid = true;
+
+
+	}
 }

@@ -10,6 +10,7 @@ public class MainDrinksScript : MonoBehaviour {
 	{
 		GameObject spawnedDrink = Instantiate(drink, drinkTransform.position, drinkTransform.rotation) as GameObject;
 		spawnedDrink.AddComponent<Rigidbody2D>();
+		spawnedDrink.AddComponent<DrinkScript>();
 		return spawnedDrink;
 	}
 
@@ -17,6 +18,8 @@ public class MainDrinksScript : MonoBehaviour {
 	public void DisplayDrink(GameObject drink, Transform drinkTransform)
 	{
 		GameObject DisplayedDrink = Instantiate(drink, drinkTransform.position, drinkTransform.rotation) as GameObject;
+		Destroy(DisplayedDrink.rigidbody2D);
+		Destroy(DisplayedDrink.collider2D);
 	}
 
 	// Function to randomize adrink

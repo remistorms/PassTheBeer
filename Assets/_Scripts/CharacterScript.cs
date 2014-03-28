@@ -7,7 +7,7 @@ public class CharacterScript : MonoBehaviour {
 	public int drinkRecieved;
 	public SpriteRenderer drinkWantedSprite;
 	public gameControl myControlRef;
-	public drinkScript myDrinkScriptRef;
+	public DrinkScript myDrinkScriptRef;
 	public Sprite[] myDrinkSprites;
 	GameObject customer;
 	public GameObject balloon;
@@ -39,7 +39,7 @@ public class CharacterScript : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		myDrinkScriptRef = other.GetComponent<drinkScript>();
+		myDrinkScriptRef = other.GetComponent<DrinkScript>();
 		drinkObject = other.gameObject;
 		CheckDrink();
 	}
