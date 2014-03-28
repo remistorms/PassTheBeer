@@ -41,5 +41,10 @@ public class ChargeScript : MonoBehaviour {
 		StartCoroutine("ChargeUp");
 	}
 
+	public void ResetCharge()
+	{
+		StopCoroutine("ChargeUp");
+		StartCoroutine("ChargeUp");
+	}
 	
 }

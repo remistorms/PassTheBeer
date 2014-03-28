@@ -15,16 +15,25 @@ public class drinkButton : MonoBehaviour {
 
 	void Awake()
 	{
+		// Gets all the reference scripts needed
+		mainDrinkScriptRef = GameObject.Find("Drinks").GetComponent<MainDrinksScript>();
 		slider = GameObject.Find("Slider");
 		mySliderRef = slider.GetComponent<UISlider>();
 		myChargeRef = slider.GetComponent<ChargeScript>();
 	
 	}
 
+
+	void Start()
+	{
+		slider.SetActive(false);
+	}
+
 	void OnPress()
 	{
 
-		myChargeRef.ChargeUp();
+		slider.SetActive(true);
+		myChargeRef.ResetCharge();
 		if (spawnedDrink == null) 
 			{
 				spawnedDrink = mainDrinkScriptRef.SpawnDrink(buttonDrink, spawnPoint.transform);
@@ -39,6 +48,7 @@ public class drinkButton : MonoBehaviour {
 		// Clears the spawned drink 
 		spawnedDrink = null;
 		//Disables the slider
+		slider.SetActive(false);
 
 	}
 
