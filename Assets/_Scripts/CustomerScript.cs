@@ -16,6 +16,8 @@ public class CustomerScript : MonoBehaviour {
 	DrinkScript myDrinkScriptRef;
 	GameObject drinkTaken;
 	bool isPaid = false;
+	float distanceFromDrink;
+	bool gotDrink = false;
 
 
 	void Awake()
@@ -85,6 +87,7 @@ public class CustomerScript : MonoBehaviour {
 
 		//DrinkScript myDrinkScriptRef = drinkReceived.GetComponent<DrinkScript>();
 		myDrinkScriptRef = drinkReceived.GetComponent<DrinkScript>();
+		distanceFromDrink = Vector2.Distance(this.gameObject.transform.position, drinkReceived.transform.position);
 		if (drinkReceived.name == drinkWanted) 
 			{
 			drinkTaken = drinkReceived;
@@ -92,6 +95,7 @@ public class CustomerScript : MonoBehaviour {
 			if (isPaid == false) 
 				{
 					Pay ();
+					Tip();
 				}
 
 			}
@@ -127,6 +131,35 @@ public class CustomerScript : MonoBehaviour {
 		myScoreRef.myScore += myDrinkScriptRef.drinkPrice;
 		isPaid = true;
 
+	}
 
+	void Tip()
+	{
+		float myTip = 0;
+		//Here goes the code for the tip
+		Debug.Log("Here goes the TIP");
+
+		if (distanceFromDrink == 0) 
+			{
+				myTip = 2.5f;
+			}
+
+		if (distanceFromDrink <= 0.5f && distanceFromDrink > 0) 
+		{
+			myTip = 1.0f;
+		}
+
+		if (distanceFromDrink > 0.5) 
+		{
+			myTip = 0f;
+		}
+
+		myScoreRef.myScore += myTip;
+		Leave();
+	}
+
+	public IEnumerator WaitingForDrink()
+	{
+		return null;
 	}
 }

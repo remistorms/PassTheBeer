@@ -48,7 +48,7 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_1
       rect:
@@ -57,7 +57,7 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_2
       rect:
@@ -66,7 +66,7 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_3
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         y: 192
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_4
       rect:
@@ -84,7 +84,7 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_5
       rect:
@@ -93,7 +93,7 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_6
       rect:
@@ -102,7 +102,7 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_7
       rect:
@@ -111,7 +111,7 @@ TextureImporter:
         y: 128
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_8
       rect:
@@ -120,7 +120,7 @@ TextureImporter:
         y: 64
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_9
       rect:
@@ -129,7 +129,7 @@ TextureImporter:
         y: 64
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_10
       rect:
@@ -138,7 +138,7 @@ TextureImporter:
         y: 64
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_11
       rect:
@@ -147,7 +147,7 @@ TextureImporter:
         y: 64
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_12
       rect:
@@ -156,7 +156,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
     - name: PassTheBeer_13
       rect:
@@ -165,7 +165,7 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 0
+      alignment: 7
       pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
