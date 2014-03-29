@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Customer : MonoBehaviour {
 
-	//External Scripts References
+	//External Scripts References (These were public before)
 	public Seats mySeatReference;
 	public Control myControlRef;
 	public DrinksContainer myDrinksContainerRef;
@@ -15,6 +15,7 @@ public class Customer : MonoBehaviour {
 	public GameObject drinkWanted;
 	public GameObject baloon;
 	public Transform spawnPoint;
+	public GameObject drinkReceived;
 	
 	// Components needed (WONT BE PUBLIC)
 	public SpriteRenderer customer_Renderer;
@@ -26,10 +27,16 @@ public class Customer : MonoBehaviour {
 
 	void Awake () 
 	{
-		// Gets a reference of the components
+		// Gets a reference of Main Scripts inside the Game Objects
+		mySeatReference = GameObject.Find("_Seats").GetComponent<Seats>();
+		myControlRef = GameObject.Find("_Control").GetComponent<Control>();
+		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
+
+		//Gets reference of this game object components
 		thisCustomer = this.gameObject;
 		customer_Renderer = thisCustomer.GetComponent<SpriteRenderer>();
 		customer_Collision = thisCustomer.GetComponent<BoxCollider2D>();
+
 		//Initial Status of some elements
 		thisCustomer.name = name;
 		baloon.SetActive(false);
@@ -58,7 +65,8 @@ public class Customer : MonoBehaviour {
 		drinkWanted = myDrinksContainerRef.AllDrinks[Random.Range(0, myDrinksContainerRef.AllDrinks.Length)];
 
 		//Calls the Display Drink function from the control Script after waiting for a short time
-		yield return new WaitForSeconds(Random.Range(0.5f, 3.0f));
+		yield return new WaitForSeconds(Random.Range(0.2f, 1.0f));
+
 		myControlRef.DisplayDrink(drinkWanted, spawnPoint);
 
 		//Time to wait before leaving the seat
@@ -75,6 +83,8 @@ public class Customer : MonoBehaviour {
 		baloon.SetActive(false);
 		// Moves away from screen
 		iTween.MoveTo(thisCustomer, iTween.Hash("x", 10, "speed", walkSpeed * 1.2f,"easetype","linear", "oncomplete", "SelfDestroy", "oncompletetarget", thisCustomer));
+		//Frees the occupied seat
+		mySeatReference.FreeSeat(seatTaken);
 
 	}
 
@@ -82,4 +92,53 @@ public class Customer : MonoBehaviour {
 	{
 		Destroy(thisCustomer, 0.5f);
 	}
+
+	void OnTriggerStay2D(Collider2D other)
+	{
+		if(other.rigidbody2D.velocity.x == 0 && drinkWanted != null)
+		{
+			//Debug.Log("A " + other.name + " has stopped in front of me");
+			drinkReceived = other.gameObject;
+
+			if (drinkReceived.name == drinkWanted.name) 
+				
+			{
+				//Pays for the drink
+				Debug.Log("Thats my drink, Ill pay now");
+				//Dissables customer collider so it doesnt keep checking
+				thisCustomer.collider2D.enabled = false;
+				myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
+
+				StartCoroutine(WaitAndLeave());
+				//Leave();
+			}
+		}
+	}
+
+	void CheckDrink()
+	{
+		if (drinkReceived == drinkWanted) 
+		
+			{
+				//Pays for the drink
+			Debug.Log("Thats my drink, Ill pay now");
+			myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
+
+			Leave();
+			}
+		else 
+			{
+			//Debug.Log("That's a  " + drinkReceived.name + ", I ordered a " + drinkWanted.name);
+			}
+	}
+
+	IEnumerator WaitAndLeave()
+	{
+		yield return new WaitForSeconds(1.5f);
+		Leave();
+		StopCoroutine("WaitAndLeave");
+
+	}
+
+
 }
