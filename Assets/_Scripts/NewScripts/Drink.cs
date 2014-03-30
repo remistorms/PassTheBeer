@@ -31,7 +31,9 @@ public class Drink : MonoBehaviour {
 
 	{
 		thisDrink.name = name;
+		//StartCoroutine(SelfDestroy());
 	}
-	
+
+
 
 }

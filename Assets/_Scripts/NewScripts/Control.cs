@@ -10,16 +10,24 @@ public class Control : MonoBehaviour {
 	public Seats mySeatsRef;
 
 	//Public variables
+	float throwForce = 1;
 	public float playerScore;
 	public float forceMultiplier;
 	public GameObject[] customers;
 	public Transform customerSpawner;
+	public Transform drinkSpawner;
+
+	// Other variables
+	public bool drinkServed = false;
+	GameObject spawnedDrink;
+	GameObject displayedDrink;
 
 	void Awake()
 	{
 		// Automatic find game objects and references
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
 		mySeatsRef = GameObject.Find("_Seats").GetComponent<Seats>();
+		drinkSpawner = GameObject.Find("DrinkSpawner").transform;
 	}
 
 	void Start()
@@ -29,24 +37,38 @@ public class Control : MonoBehaviour {
 
 	public void SpawnDrink(GameObject drinkToSpawn, Transform spawningPoint)
 	{
-		GameObject SpawnedDrink = Instantiate(drinkToSpawn, spawningPoint.position, spawningPoint.rotation) as GameObject;
+		// Spawns a drink on the bar if there is no drink served currently
+		if (drinkServed == false) 
+		
+			{
+				spawnedDrink = Instantiate(drinkToSpawn, spawningPoint.position, spawningPoint.rotation) as GameObject;
+				drinkServed = true;
+			}
+
 	}
 
 	public void DisplayDrink(GameObject drinkToSpawn, Transform spawningPoint)
 	{
 
-		GameObject SpawnedDrink = Instantiate(drinkToSpawn, spawningPoint.position, spawningPoint.rotation) as GameObject;
-		SpawnedDrink.transform.parent = spawningPoint.gameObject.transform;
+		displayedDrink = Instantiate(drinkToSpawn, spawningPoint.position, spawningPoint.rotation) as GameObject;
+		displayedDrink.transform.parent = spawningPoint.gameObject.transform;
 		//Spanws a copy of the drink wanted but destroys the rigid body
-		Destroy(SpawnedDrink.rigidbody2D);
-		currentDrink = SpawnedDrink;
+		Destroy(displayedDrink.rigidbody2D);
+		currentDrink = displayedDrink;
 	
 	}
 
-	public void ThrowDrink(float force)
+	public void ThrowDrink()
 	{
-		// Add a force to the spawned drink
-		currentDrink.rigidbody2D.AddForce(new Vector2(force * forceMultiplier, 0));
+		if (drinkServed) 
+		{
+			// Add a force to the spawned drink
+			spawnedDrink.rigidbody2D.AddForce(new Vector2(throwForce * forceMultiplier, 0));
+			// Opens up the option to spawn another drink
+			drinkServed = false;
+			StartCoroutine(SelfDestroy(spawnedDrink));
+
+		}
 
 	}
 
@@ -69,4 +91,11 @@ public class Control : MonoBehaviour {
 				}*/
 	}
 
+	IEnumerator SelfDestroy(GameObject drinkToDestroy)
+	{
+		yield return new WaitForSeconds(3.0f);
+		iTween.FadeTo(drinkToDestroy, iTween.Hash("alpha", 0, "time", 0.1f, "looptype", "pingPong"));
+		yield return new WaitForSeconds(1.5f);
+		Destroy(drinkToDestroy);
+	}
 }

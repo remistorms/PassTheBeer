@@ -807,15 +807,16 @@
      <Compile Include="Assets\_Scripts\ChargeButtonScript.cs" />
      <Compile Include="Assets\_Scripts\ChargeScript.cs" />
      <Compile Include="Assets\_Scripts\CustomerScript.cs" />
-     <Compile Include="Assets\_Scripts\DrinkScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Control.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Customer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Drink.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\DrinkButtonScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinksContainer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Seats.cs" />
      <Compile Include="Assets\_Scripts\SeatsScript.cs" />
      <Compile Include="Assets\_Scripts\SelfDestroy.cs" />
      <Compile Include="Assets\_Scripts\drinkButton.cs" />
+     <Compile Include="Assets\_Scripts\drinkScript.cs" />
      <Compile Include="Assets\_Scripts\gameControl.cs" />
      <Compile Include="Assets\iTween\iTween.cs" />
      <Compile Include="Assets\uScript\uScriptRuntime\Nodes\Actions\Animation\uScriptAct_GetAnimationState.cs" />

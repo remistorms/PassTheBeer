@@ -61,11 +61,13 @@ public class Customer : MonoBehaviour {
 		//Activates the baloon Game Object to display de trink
 		baloon.SetActive(true);
 
-		// Picks a random drink from the Drinks Container Array 
-		drinkWanted = myDrinksContainerRef.AllDrinks[Random.Range(0, myDrinksContainerRef.AllDrinks.Length)];
 
 		//Calls the Display Drink function from the control Script after waiting for a short time
+
 		yield return new WaitForSeconds(Random.Range(0.2f, 1.0f));
+
+		// Picks a random drink from the Drinks Container Array 
+		drinkWanted = myDrinksContainerRef.AllDrinks[Random.Range(0, myDrinksContainerRef.AllDrinks.Length)];
 
 		myControlRef.DisplayDrink(drinkWanted, spawnPoint);
 
