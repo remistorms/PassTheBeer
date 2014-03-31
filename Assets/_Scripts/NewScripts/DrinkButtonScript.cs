@@ -11,12 +11,13 @@ public class DrinkButtonScript : MonoBehaviour {
 
 	public int drinkID;
 
-	void Awake()
+	void Start()
 	{
+
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
 		myControlRef = GameObject.Find("_Control").GetComponent<Control>();
-		mySliderRef = GameObject.Find("PowerCharge").GetComponent<UISlider>();
-		myPowerChargeRef = GameObject.Find("PowerCharge").GetComponent<PowerCharge>();
+		myPowerChargeRef = GameObject.Find("_PowerCharge").GetComponent<PowerCharge>();
+		mySliderRef = GameObject.Find("_PowerCharge").GetComponent<UISlider>();
 	}
 
 	void OnPress()
@@ -28,11 +29,13 @@ public class DrinkButtonScript : MonoBehaviour {
 
 	void OnClick()
 	{
+
+
 		if (myControlRef.drinkServed) 
 			{
 				myControlRef.ThrowDrink(mySliderRef.value);
-			myPowerChargeRef.ResetBar();
-				
+				myPowerChargeRef.ResetBar();
 			}
+
 	}
 }

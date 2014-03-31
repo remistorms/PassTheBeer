@@ -30,6 +30,7 @@ public class Drink : MonoBehaviour {
 	void Start()
 
 	{
+
 		thisDrink.name = name;
 		//StartCoroutine(SelfDestroy());
 	}

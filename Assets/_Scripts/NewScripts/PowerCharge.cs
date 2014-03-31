@@ -7,6 +7,7 @@ public class PowerCharge : MonoBehaviour {
 	public UISlider powerSlider;
 	public GameObject thisGameObjectRef;
 	public UISprite foregroundBar;
+	public GameObject fakeSlider;
 	// Variables
 	public Color minColour;
 	public Color maxColour;
@@ -20,18 +21,25 @@ public class PowerCharge : MonoBehaviour {
 	void Awake()
 	{
 		thisGameObjectRef = this.gameObject;
+		fakeSlider = GameObject.Find("_FakeSlider");
 		powerSlider = thisGameObjectRef.GetComponent<UISlider>();
 		foregroundBar = GameObject.Find("PowerChargeForeground").GetComponent<UISprite>();
+
 	}
 
 	void Start()
 	{
 		foregroundBar.color = minColour;
 		powerSlider.value = 0.0f;
+
 	}
 
-	public void ChargeBar()
+	public void ChargeBar() // FIx usign charge up and charge down instead of loopty pingPong
 	{
+		//Swaps betwen fake and real slider
+		thisGameObjectRef.SetActive(true);
+		fakeSlider.SetActive(false);
+
 		// Changes the numeric value of the slider
 		Hashtable ihv = iTween.Hash("from",0,"to",1,"speed",barSpeed,"name","itweenValue","looptype","pingPong", "onupdate", "UpdateValue");
 		iTween.ValueTo(thisGameObjectRef, ihv);
@@ -41,10 +49,12 @@ public class PowerCharge : MonoBehaviour {
 		iTween.ValueTo(thisGameObjectRef, ihc);
 	}
 
+
+
 	public void ResetBar()
 	{
-		iTween.StopByName("itweenColour");
-		iTween.StopByName("itweenValue");
+		thisGameObjectRef.SetActive(false);
+		fakeSlider.SetActive(true);
 		powerSlider.value = 0;
 		foregroundBar.color = minColour;
 	}

@@ -63,7 +63,7 @@ public class Control : MonoBehaviour {
 		if (drinkServed) 
 		{
 			// Add a force to the spawned drink
-			spawnedDrink.rigidbody2D.AddForce(new Vector2(baseForce * forceMultiplier, 0));
+			spawnedDrink.rigidbody2D.AddForce(new Vector2(100 + (baseForce * forceMultiplier), 0));
 			// Opens up the option to spawn another drink
 			drinkServed = false;
 			StartCoroutine(SelfDestroy(spawnedDrink));
@@ -82,20 +82,17 @@ public class Control : MonoBehaviour {
 
 	}
 
-	void Update()
-
-	{
-		/*if (Input.GetKeyDown(KeyCode.Space)) {
-
-			SpawnCustomer();
-				}*/
-	}
-
 	IEnumerator SelfDestroy(GameObject drinkToDestroy)
 	{
-		yield return new WaitForSeconds(3.0f);
-		iTween.FadeTo(drinkToDestroy, iTween.Hash("alpha", 0, "time", 0.1f, "looptype", "pingPong"));
-		yield return new WaitForSeconds(1.5f);
-		Destroy(drinkToDestroy);
+
+			yield return new WaitForSeconds(3.0f);
+
+		if (drinkToDestroy != null) 
+		{
+			iTween.FadeTo(drinkToDestroy, iTween.Hash("alpha", 0, "time", 0.1f, "looptype", "pingPong"));
+		}
+			yield return new WaitForSeconds(1.5f);
+			Destroy(drinkToDestroy);
+
 	}
 }

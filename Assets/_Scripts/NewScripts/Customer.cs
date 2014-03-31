@@ -72,7 +72,7 @@ public class Customer : MonoBehaviour {
 		myControlRef.DisplayDrink(drinkWanted, spawnPoint);
 
 		//Time to wait before leaving the seat
-		yield return new WaitForSeconds(Random.Range(5.0f, 10.0f));
+		yield return new WaitForSeconds(Random.Range(10.0f, 30.0f));
 
 		Leave ();
 	}
@@ -111,8 +111,10 @@ public class Customer : MonoBehaviour {
 				thisCustomer.collider2D.enabled = false;
 				myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
 
+				// Destroys drink received
+				Destroy(drinkReceived);
 				StartCoroutine(WaitAndLeave());
-				//Leave();
+
 			}
 		}
 	}
