@@ -812,6 +812,7 @@
      <Compile Include="Assets\_Scripts\NewScripts\Drink.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinkButtonScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinksContainer.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\PowerCharge.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Seats.cs" />
      <Compile Include="Assets\_Scripts\SeatsScript.cs" />
      <Compile Include="Assets\_Scripts\SelfDestroy.cs" />

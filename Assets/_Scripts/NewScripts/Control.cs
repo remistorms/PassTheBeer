@@ -10,7 +10,7 @@ public class Control : MonoBehaviour {
 	public Seats mySeatsRef;
 
 	//Public variables
-	float throwForce = 1;
+	//float baseForce = 1;
 	public float playerScore;
 	public float forceMultiplier;
 	public GameObject[] customers;
@@ -58,12 +58,12 @@ public class Control : MonoBehaviour {
 	
 	}
 
-	public void ThrowDrink()
+	public void ThrowDrink(float baseForce)
 	{
 		if (drinkServed) 
 		{
 			// Add a force to the spawned drink
-			spawnedDrink.rigidbody2D.AddForce(new Vector2(throwForce * forceMultiplier, 0));
+			spawnedDrink.rigidbody2D.AddForce(new Vector2(baseForce * forceMultiplier, 0));
 			// Opens up the option to spawn another drink
 			drinkServed = false;
 			StartCoroutine(SelfDestroy(spawnedDrink));
