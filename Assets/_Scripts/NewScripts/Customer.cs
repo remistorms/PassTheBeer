@@ -72,7 +72,7 @@ public class Customer : MonoBehaviour {
 		myControlRef.DisplayDrink(drinkWanted, spawnPoint);
 
 		//Time to wait before leaving the seat
-		yield return new WaitForSeconds(Random.Range(10.0f, 30.0f));
+		yield return new WaitForSeconds(Random.Range(20.0f, 60.0f));
 
 		Leave ();
 	}
