@@ -808,6 +808,7 @@
      <Compile Include="Assets\_Scripts\ChargeScript.cs" />
      <Compile Include="Assets\_Scripts\CustomerScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Control.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\CountDownTimer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Customer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Drink.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinkButtonScript.cs" />

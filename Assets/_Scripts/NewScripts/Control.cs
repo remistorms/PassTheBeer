@@ -8,6 +8,7 @@ public class Control : MonoBehaviour {
 	Drink myDrinkRef;
 	GameObject currentDrink;
 	public Seats mySeatsRef;
+	CountDownTimer myCountDownTimerRef;
 
 	//Public variables
 	//float baseForce = 1;
@@ -16,6 +17,7 @@ public class Control : MonoBehaviour {
 	public GameObject[] customers;
 	public Transform customerSpawner;
 	public Transform drinkSpawner;
+	public bool isTimed = false;
 
 	// Other variables
 	public bool drinkServed = false;
@@ -24,6 +26,10 @@ public class Control : MonoBehaviour {
 
 	void Awake()
 	{
+		if (isTimed) 
+		{
+			myCountDownTimerRef = GameObject.Find("TimerLabel").GetComponent<CountDownTimer>();
+		}
 		// Automatic find game objects and references
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
 		mySeatsRef = GameObject.Find("_Seats").GetComponent<Seats>();
@@ -47,6 +53,14 @@ public class Control : MonoBehaviour {
 
 	}
 
+	public void Update()
+	{
+		if (myCountDownTimerRef != null && myCountDownTimerRef.isTimeUp == true) 
+			
+		{
+			EndLevel();
+		}
+	}
 	public void DisplayDrink(GameObject drinkToSpawn, Transform spawningPoint)
 	{
 
@@ -94,5 +108,10 @@ public class Control : MonoBehaviour {
 			yield return new WaitForSeconds(1.5f);
 			Destroy(drinkToDestroy);
 
+	}
+
+	void EndLevel()
+	{
+		CancelInvoke();
 	}
 }
