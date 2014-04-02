@@ -9,6 +9,7 @@ public class Control : MonoBehaviour {
 	GameObject currentDrink;
 	public Seats mySeatsRef;
 	CountDownTimer myCountDownTimerRef;
+	public LevelStats myLevelStatsRef;
 
 	//Public variables
 	//float baseForce = 1;
@@ -30,6 +31,7 @@ public class Control : MonoBehaviour {
 		{
 			myCountDownTimerRef = GameObject.Find("TimerLabel").GetComponent<CountDownTimer>();
 		}
+		myLevelStatsRef = this.gameObject.GetComponent<LevelStats>();
 		// Automatic find game objects and references
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
 		mySeatsRef = GameObject.Find("_Seats").GetComponent<Seats>();
@@ -58,6 +60,7 @@ public class Control : MonoBehaviour {
 		if (myCountDownTimerRef != null && myCountDownTimerRef.isTimeUp == true) 
 			
 		{
+			Debug.Log("Level has ended FUCK !!!");
 			EndLevel();
 		}
 	}
@@ -78,6 +81,7 @@ public class Control : MonoBehaviour {
 		{
 			// Add a force to the spawned drink
 			spawnedDrink.rigidbody2D.AddForce(new Vector2(100 + (baseForce * forceMultiplier), 0));
+			myLevelStatsRef.drinksServed += 1;
 			// Opens up the option to spawn another drink
 			drinkServed = false;
 			StartCoroutine(SelfDestroy(spawnedDrink));
@@ -92,6 +96,7 @@ public class Control : MonoBehaviour {
 		if (mySeatsRef.emptySeats.Count > 0) 
 			{
 			Instantiate(customers[Random.Range(0, customers.Length)], customerSpawner.position, customerSpawner.rotation);
+			myLevelStatsRef.customerSpawned += 1;
 			}
 
 	}

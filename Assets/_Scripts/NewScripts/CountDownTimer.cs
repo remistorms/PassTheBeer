@@ -20,7 +20,7 @@ public class CountDownTimer : MonoBehaviour {
 	void Start () 
 	{
 		startTime=Time.deltaTime;
-		myTimerLabel = this.gameObject.GetComponent<UILabel>();
+		myTimerLabel = GameObject.Find("TimerLabel").GetComponent<UILabel>();
 
 		
 	}
