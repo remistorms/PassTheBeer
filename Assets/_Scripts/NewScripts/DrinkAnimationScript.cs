@@ -8,6 +8,7 @@ public class DrinkAnimationScript : MonoBehaviour {
 	public Transform handPosition;
 	public GameObject customerArm;
 	float drinkingSpeed = 0.8f;
+	GameObject myDrinkTaken;
 
 	void Awake()
 	{
@@ -21,8 +22,10 @@ public class DrinkAnimationScript : MonoBehaviour {
 	{
 		customerArm.SetActive(false);
 	}
+
 	public void BottomsUp(GameObject drinkTaken)
 	{
+		myDrinkTaken = drinkTaken;
 		//Makes the arm visible
 		customerArm.SetActive(true);
 		// Parent the drink to the Hand
@@ -40,6 +43,7 @@ public class DrinkAnimationScript : MonoBehaviour {
 	{
 		//yield return new WaitForSeconds(.5f);
 		//iTween parameters:
+
 		for (int i = 0; i < 2; i++) 
 		
 			{
@@ -50,12 +54,34 @@ public class DrinkAnimationScript : MonoBehaviour {
 
 			//Wait before next zip
 			yield return new WaitForSeconds(1.0f);
+			myDrinkTaken.GetComponent<Drink>().drink_Renderer.sprite = myDrinkTaken.GetComponent<Drink>().emptySprite;
 
 			//Hand Up
 			Hashtable myHash2 = iTween.Hash("name","drinkAnimation2","y", -0.4f,"speed", drinkingSpeed,"easetype", "linear");
 			iTween.MoveAdd(customerArm, myHash2);
 			}
 
-			
+		yield return new WaitForSeconds(1);
+
+		customerArm.SetActive(false);
+		myDrinkTaken.transform.parent = null;
+		StartCoroutine(DestroyEmptyGlass());
+		Destroy(myDrinkTaken,2.5f);
+	
+	}
+
+	public IEnumerator DestroyEmptyGlass()
+	{
+		yield return new WaitForSeconds(1.5f);
+		
+		if (myDrinkTaken != null) 
+		{
+			iTween.FadeTo(myDrinkTaken, iTween.Hash("name","FadingEmptyDrink","alpha", 0, "time", 0.1f, "looptype", "pingPong"));
+		}
+		yield return new WaitForSeconds(1.5f);
+
+
+	
+		
 	}
 }

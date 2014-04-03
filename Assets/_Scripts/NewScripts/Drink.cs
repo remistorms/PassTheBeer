@@ -14,6 +14,7 @@ public class Drink : MonoBehaviour {
 	public SpriteRenderer drink_Renderer;
 	public BoxCollider2D drink_Collision;
 	public Rigidbody2D drink_RigidBody;
+	public Sprite emptySprite;
 
 	//This Game Object Reference
 	GameObject thisDrink;

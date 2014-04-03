@@ -149,7 +149,7 @@ public class Customer : MonoBehaviour {
 
 	IEnumerator WaitAndLeave()
 	{
-		yield return new WaitForSeconds(Random.Range(6.0f, 10.0f));
+		yield return new WaitForSeconds(Random.Range(8.0f, 10.0f));
 		iTween.StopByName(thisCustomer, "drinkAnimation");
 		Leave();
 		StopCoroutine("WaitAndLeave");
