@@ -27,12 +27,36 @@ public class Drink : MonoBehaviour {
 		drink_RigidBody = thisDrink.GetComponent<Rigidbody2D>();
 	}
 
+	void Update()
+	{
+		if (drink_RigidBody != null) {
+			if (drink_RigidBody.velocity.x == 0) {
+				//Destroys Object after stops
+				StartCoroutine(SelfDestroy());
+			}
+				}
+
+	}
+
 	void Start()
 
 	{
 
 		thisDrink.name = name;
-		//StartCoroutine(SelfDestroy());
+
+	}
+
+	public IEnumerator SelfDestroy()
+	{
+		yield return new WaitForSeconds(3.5f);
+		
+		if (thisDrink != null) 
+		{
+			iTween.FadeTo(thisDrink, iTween.Hash("alpha", 0, "time", 0.1f, "looptype", "pingPong"));
+		}
+		yield return new WaitForSeconds(1.5f);
+		Destroy(thisDrink);
+
 	}
 
 

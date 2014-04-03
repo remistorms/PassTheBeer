@@ -7,6 +7,7 @@ public class Customer : MonoBehaviour {
 	public Seats mySeatReference;
 	public Control myControlRef;
 	public DrinksContainer myDrinksContainerRef;
+	public DrinkAnimationScript myDrinkAnimationRef;
 
 	// Public Variables
 	public string name;
@@ -31,6 +32,7 @@ public class Customer : MonoBehaviour {
 		mySeatReference = GameObject.Find("_Seats").GetComponent<Seats>();
 		myControlRef = GameObject.Find("_Control").GetComponent<Control>();
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
+		myDrinkAnimationRef = this.gameObject.GetComponent<DrinkAnimationScript>();
 
 		//Gets reference of this game object components
 		thisCustomer = this.gameObject;
@@ -105,14 +107,23 @@ public class Customer : MonoBehaviour {
 			if (drinkReceived.name == drinkWanted.name) 
 				
 			{
-				//Pays for the drink
-				Debug.Log("Thats my drink, Ill pay now");
+				//Stops drink from dissapearing
+				Drink otherDrinkRef = drinkReceived.GetComponent<Drink>();
+				otherDrinkRef.StopAllCoroutines();
+				Destroy(other.rigidbody2D);
+				Destroy(other.collider2D);
+				baloon.SetActive(false);
 				//Dissables customer collider so it doesnt keep checking
 				thisCustomer.collider2D.enabled = false;
+				//Calls the animation for drinking 
+				myDrinkAnimationRef.BottomsUp(drinkReceived);
+				//Stops the beer from destroying itself
+
+				//Pays for the drink
 				myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
 
 				// Destroys drink received
-				Destroy(drinkReceived);
+				//Destroy(drinkReceived);
 				StartCoroutine(WaitAndLeave());
 
 			}
@@ -125,7 +136,7 @@ public class Customer : MonoBehaviour {
 		
 			{
 				//Pays for the drink
-			Debug.Log("Thats my drink, Ill pay now");
+			myDrinkAnimationRef.BottomsUp(drinkReceived);
 			myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
 
 			Leave();
@@ -138,7 +149,8 @@ public class Customer : MonoBehaviour {
 
 	IEnumerator WaitAndLeave()
 	{
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(Random.Range(6.0f, 10.0f));
+		iTween.StopByName(thisCustomer, "drinkAnimation");
 		Leave();
 		StopCoroutine("WaitAndLeave");
 

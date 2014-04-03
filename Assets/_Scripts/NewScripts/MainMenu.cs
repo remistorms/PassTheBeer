@@ -7,11 +7,20 @@ public class MainMenu : MonoBehaviour {
 	public GameObject[] worldSelect;
 
 
-	// Use this for initialization
-	void Awake () 
+	void Start()
 	{
 		Screen.autorotateToLandscapeLeft = true;
 		Screen.autorotateToLandscapeRight = true;
+		Screen.autorotateToPortrait = false;
+		Screen.autorotateToPortraitUpsideDown = false;
+		Screen.orientation = ScreenOrientation.AutoRotation;
+	}
+
+	// Use this for initialization
+	void Awake () 
+	{
+
+
 
 		//Disables world select pannels 
 		for (int i = 0; i < worldSelect.Length; i++) 

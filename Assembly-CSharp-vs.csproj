@@ -734,6 +734,7 @@
      <Compile Include="Assets\_Scripts\NewScripts\CountDownTimer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Customer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Drink.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\DrinkAnimationScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinkButtonScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\DrinksContainer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\LevelSelectButton.cs" />

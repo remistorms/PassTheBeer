@@ -25,8 +25,10 @@ public class Control : MonoBehaviour {
 	GameObject spawnedDrink;
 	GameObject displayedDrink;
 
+
 	void Awake()
 	{
+
 		if (isTimed) 
 		{
 			myCountDownTimerRef = GameObject.Find("TimerLabel").GetComponent<CountDownTimer>();
@@ -40,6 +42,14 @@ public class Control : MonoBehaviour {
 
 	void Start()
 	{
+		//Screen rotation 
+		Screen.autorotateToLandscapeLeft = true;
+		Screen.autorotateToLandscapeRight = true;
+		Screen.autorotateToPortrait = false;
+		Screen.autorotateToPortraitUpsideDown = false;
+		Screen.orientation = ScreenOrientation.AutoRotation;
+
+		//Starts spawning Customers
 		InvokeRepeating("SpawnCustomer", 1, Random.Range(3f, 5f));
 	}
 
@@ -57,6 +67,9 @@ public class Control : MonoBehaviour {
 
 	public void Update()
 	{
+		Screen.autorotateToLandscapeLeft = true;
+		Screen.autorotateToLandscapeRight = true;
+
 		if (myCountDownTimerRef != null && myCountDownTimerRef.isTimeUp == true) 
 			
 		{
@@ -84,7 +97,9 @@ public class Control : MonoBehaviour {
 			myLevelStatsRef.drinksServed += 1;
 			// Opens up the option to spawn another drink
 			drinkServed = false;
-			StartCoroutine(SelfDestroy(spawnedDrink));
+
+			//This makes the drink disapear
+			//StartCoroutine(SelfDestroy(spawnedDrink));
 
 		}
 
