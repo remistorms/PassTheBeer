@@ -44,12 +44,12 @@ public class DrinkAnimationScript : MonoBehaviour {
 		//yield return new WaitForSeconds(.5f);
 		//iTween parameters:
 
-		for (int i = 0; i < 2; i++) 
+		for (int i = 0; i < 1; i++) 
 		
 			{
-			yield return new WaitForSeconds(2.0f);
+			yield return new WaitForSeconds(1.0f);
 			//Hand down
-			Hashtable myHash = iTween.Hash("name","drinkAnimation","y", 0.4f,"speed", drinkingSpeed,"easetype", "linear");
+			Hashtable myHash = iTween.Hash("name","drinkAnimation","y", 0.3f,"speed", drinkingSpeed,"easetype", "linear");
 			iTween.MoveAdd(customerArm, myHash);
 
 			//Wait before next zip
@@ -57,7 +57,7 @@ public class DrinkAnimationScript : MonoBehaviour {
 			myDrinkTaken.GetComponent<Drink>().drink_Renderer.sprite = myDrinkTaken.GetComponent<Drink>().emptySprite;
 
 			//Hand Up
-			Hashtable myHash2 = iTween.Hash("name","drinkAnimation2","y", -0.4f,"speed", drinkingSpeed,"easetype", "linear");
+			Hashtable myHash2 = iTween.Hash("name","drinkAnimation2","y", -0.3f,"speed", drinkingSpeed,"easetype", "linear");
 			iTween.MoveAdd(customerArm, myHash2);
 			}
 
