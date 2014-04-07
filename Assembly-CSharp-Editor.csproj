@@ -148,6 +148,11 @@
      <Compile Include="Assets\PlayMaker\Editor\PlayMakerMainMenu.cs" />
      <Compile Include="Assets\PlayMaker\Editor\PlayMakerWelcomeWindow.cs" />
      <Compile Include="Assets\PlayMaker\Editor\ReportWindow.cs" />
+     <Compile Include="Assets\SpritePacker\Required\Editor\SP_AutomaticUpdater.cs" />
+     <Compile Include="Assets\SpritePacker\Required\Editor\SP_DragAndDrop.cs" />
+     <Compile Include="Assets\SpritePacker\Required\Editor\SP_Inspector.cs" />
+     <Compile Include="Assets\SpritePacker\Required\Editor\SP_SpritePacker_Inspector.cs" />
+     <Compile Include="Assets\SpritePacker\Required\Editor\SP_Window.cs" />
      <Compile Include="Assets\iTween\PlayMaker\Editor\iTweenMoveToActionEditor.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.5.4 r2.txt" />

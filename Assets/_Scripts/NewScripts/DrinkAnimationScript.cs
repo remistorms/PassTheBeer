@@ -35,6 +35,7 @@ public class DrinkAnimationScript : MonoBehaviour {
 		Destroy(drinkTaken.rigidbody2D);
 		//Zeroes out the position of the drink in relation to the hand
 		drinkTaken.transform.localPosition = new Vector2(0,0);
+		drinkTaken.renderer.sortingOrder = -1;
 		StartCoroutine(PlayAnimation());
 
 	}

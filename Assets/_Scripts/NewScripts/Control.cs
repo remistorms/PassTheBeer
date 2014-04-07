@@ -37,7 +37,7 @@ public class Control : MonoBehaviour {
 		// Automatic find game objects and references
 		myDrinksContainerRef = GameObject.Find("_DrinksContainer").GetComponent<DrinksContainer>();
 		mySeatsRef = GameObject.Find("_Seats").GetComponent<Seats>();
-		drinkSpawner = GameObject.Find("DrinkSpawner").transform;
+		drinkSpawner = GameObject.Find("_DrinkSpawner").transform;
 	}
 
 	void Start()
