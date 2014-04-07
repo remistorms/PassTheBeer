@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: b216269cea3e74ae1a7b9f098909b684
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: 0 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 1 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 2 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 117
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 3 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 4 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 233
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 5 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 6 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 349
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 7 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 8 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 465
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 9 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 10 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 581
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 11 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 12 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 697
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 13 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 14 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 813
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 15 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 117
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 16 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 117
+        width: 114
+        height: 114
+      alignment: 9
+      pivot: {x: .5, y: .5}
+    - name: 17 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 233
+        width: 113
+        height: 114
+      alignment: 9
+      pivot: {x: .504424751, y: .5}
+    - name: 18 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 117
+        width: 111
+        height: 114
+      alignment: 9
+      pivot: {x: .513513505, y: .5}
+    - name: 19 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 349
+        width: 109
+        height: 114
+      alignment: 9
+      pivot: {x: .522935808, y: .5}
+    - name: 20 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 233
+        width: 106
+        height: 114
+      alignment: 9
+      pivot: {x: .53773582, y: .5}
+    - name: 21 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 117
+        width: 103
+        height: 114
+      alignment: 9
+      pivot: {x: .553398073, y: .5}
+    - name: 22 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 465
+        width: 99
+        height: 114
+      alignment: 9
+      pivot: {x: .575757563, y: .5}
+    - name: 23 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 349
+        width: 95
+        height: 114
+      alignment: 9
+      pivot: {x: .600000024, y: .5}
+    - name: 24 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 1
+        width: 91
+        height: 114
+      alignment: 9
+      pivot: {x: .626373649, y: .5}
+    - name: 25 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 233
+        width: 86
+        height: 114
+      alignment: 9
+      pivot: {x: .662790716, y: .5}
+    - name: 26 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 581
+        width: 80
+        height: 114
+      alignment: 9
+      pivot: {x: .712499976, y: .5}
+    - name: 27 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 465
+        width: 75
+        height: 114
+      alignment: 9
+      pivot: {x: .75999999, y: .5}
+    - name: 28 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 117
+        width: 69
+        height: 114
+      alignment: 9
+      pivot: {x: .826086938, y: .5}
+    - name: 29 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 349
+        width: 63
+        height: 114
+      alignment: 9
+      pivot: {x: .90476191, y: .5}
+    - name: 30 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 697
+        width: 58
+        height: 114
+      alignment: 9
+      pivot: {x: .982758641, y: .5}
+    - name: 31 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 581
+        width: 58
+        height: 114
+      alignment: 9
+      pivot: {x: .982758641, y: .5}
+    - name: 32 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 233
+        width: 58
+        height: 113
+      alignment: 9
+      pivot: {x: .982758641, y: .495575219}
+    - name: 33 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 117
+        width: 58
+        height: 111
+      alignment: 9
+      pivot: {x: .982758641, y: .486486495}
+    - name: 34 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 465
+        width: 58
+        height: 109
+      alignment: 9
+      pivot: {x: .982758641, y: .477064222}
+    - name: 35 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 349
+        width: 58
+        height: 106
+      alignment: 9
+      pivot: {x: .982758641, y: .46226415}
+    - name: 36 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 813
+        width: 58
+        height: 103
+      alignment: 9
+      pivot: {x: .982758641, y: .446601927}
+    - name: 37 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 581
+        width: 58
+        height: 99
+      alignment: 9
+      pivot: {x: .982758641, y: .424242437}
+    - name: 38 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 233
+        width: 58
+        height: 95
+      alignment: 9
+      pivot: {x: .982758641, y: .400000006}
+    - name: 39 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 929
+        width: 58
+        height: 91
+      alignment: 9
+      pivot: {x: .982758641, y: .373626381}
+    - name: 40 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 117
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: .982758641, y: .337209314}
+    - name: 41 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 230
+        width: 58
+        height: 80
+      alignment: 9
+      pivot: {x: .982758641, y: .287499994}
+    - name: 42 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 465
+        width: 58
+        height: 75
+      alignment: 9
+      pivot: {x: .982758641, y: .239999995}
+    - name: 43 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 348
+        width: 58
+        height: 69
+      alignment: 9
+      pivot: {x: .982758641, y: .173913047}
+    - name: 44 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 697
+        width: 58
+        height: 63
+      alignment: 9
+      pivot: {x: .982758641, y: .095238097}
+    - name: 45 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 918
+        width: 58
+        height: 58
+      alignment: 9
+      pivot: {x: .982758641, y: .0172413792}
+    - name: 46 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 576
+        width: 58
+        height: 58
+      alignment: 9
+      pivot: {x: .982758641, y: .0172413792}
+    - name: 47 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 682
+        width: 57
+        height: 58
+      alignment: 9
+      pivot: {x: .982456148, y: .0172413792}
+    - name: 48 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 117
+        width: 55
+        height: 58
+      alignment: 9
+      pivot: {x: .981818199, y: .0172413792}
+    - name: 49 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 233
+        width: 53
+        height: 58
+      alignment: 9
+      pivot: {x: .98113209, y: .0172413792}
+    - name: 50 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 312
+        width: 50
+        height: 58
+      alignment: 9
+      pivot: {x: .980000019, y: .0172413792}
+    - name: 51 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 205
+        width: 47
+        height: 58
+      alignment: 9
+      pivot: {x: .978723407, y: .0172413792}
+    - name: 52 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 457
+        width: 43
+        height: 58
+      alignment: 9
+      pivot: {x: .976744175, y: .0172413792}
+    - name: 53 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 929
+        width: 39
+        height: 57
+      alignment: 9
+      pivot: {x: .974358976, y: 0}
+    - name: 54 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 762
+        width: 35
+        height: 57
+      alignment: 9
+      pivot: {x: .971428573, y: 0}
+    - name: 55 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 542
+        width: 30
+        height: 57
+      alignment: 9
+      pivot: {x: .966666639, y: 0}
+    - name: 56 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 636
+        width: 24
+        height: 57
+      alignment: 9
+      pivot: {x: .958333313, y: 0}
+    - name: 57 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 697
+        width: 19
+        height: 57
+      alignment: 9
+      pivot: {x: .947368443, y: 0}
+    - name: 58 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 117
+        width: 13
+        height: 57
+      alignment: 9
+      pivot: {x: .923076928, y: 0}
+    - name: 59 (TimerAtlas)
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 177
+        width: 7
+        height: 57
+      alignment: 9
+      pivot: {x: .857142866, y: 0}
+  spritePackingTag: 
+  userData: 

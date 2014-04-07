@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 7ab907a2d88584d68b307b6700d68c67
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: HipsterGuy_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 136
+        height: 228
+      alignment: 9
+      pivot: {x: .5, y: .561403513}
+    - name: ProfessorMan_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1
+        width: 136
+        height: 224
+      alignment: 9
+      pivot: {x: .5, y: .571428597}
+    - name: DreadlockGirl_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1
+        width: 144
+        height: 212
+      alignment: 9
+      pivot: {x: .5, y: .603773594}
+    - name: DreadlockGirl2 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 231
+        width: 144
+        height: 212
+      alignment: 9
+      pivot: {x: .472222209, y: .603773594}
+    - name: Hasher (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1
+        width: 144
+        height: 208
+      alignment: 9
+      pivot: {x: .5, y: .615384638}
+    - name: Hasher_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 445
+        width: 144
+        height: 208
+      alignment: 9
+      pivot: {x: .5, y: .615384638}
+    - name: Robot_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 227
+        width: 144
+        height: 208
+      alignment: 9
+      pivot: {x: .5, y: .615384638}
+    - name: BoneyFarmer_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 655
+        width: 128
+        height: 204
+      alignment: 9
+      pivot: {x: .5, y: .627451003}
+    - name: Jerry_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 437
+        width: 136
+        height: 204
+      alignment: 9
+      pivot: {x: .5, y: .627451003}
+    - name: BuckToothBoy_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 215
+        width: 144
+        height: 204
+      alignment: 9
+      pivot: {x: .5, y: .627451003}
+    - name: OldBeard_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 211
+        width: 112
+        height: 200
+      alignment: 9
+      pivot: {x: .5, y: .639999986}
+    - name: Diablo_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1
+        width: 176
+        height: 200
+      alignment: 9
+      pivot: {x: .5, y: .639999986}
+    - name: Cosmonaut_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 421
+        width: 144
+        height: 196
+      alignment: 9
+      pivot: {x: .5, y: .653061211}
+    - name: CreepyGuy (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 1
+        width: 120
+        height: 188
+      alignment: 9
+      pivot: {x: .5, y: .680851042}
+    - name: Gadges (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 643
+        width: 144
+        height: 188
+      alignment: 9
+      pivot: {x: .5, y: .680851042}
+    - name: BikerMan_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 413
+        width: 176
+        height: 184
+      alignment: 9
+      pivot: {x: .5, y: .695652187}
+    - name: BackpackDude_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 203
+        width: 144
+        height: 184
+      alignment: 9
+      pivot: {x: .5, y: .695652187}
+    - name: SleezyMan_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 619
+        width: 176
+        height: 168
+      alignment: 9
+      pivot: {x: .5, y: .761904776}
+    - name: Gadges_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 833
+        width: 144
+        height: 176
+      alignment: 9
+      pivot: {x: .5, y: .727272749}
+    - name: AwkwardGirl_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1
+        width: 112
+        height: 168
+      alignment: 9
+      pivot: {x: .5, y: .761904776}
+    - name: LittleOldLady_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 861
+        width: 112
+        height: 144
+      alignment: 9
+      pivot: {x: .5, y: .888888896}
+    - name: Frank_v1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 389
+        width: 136
+        height: 144
+      alignment: 9
+      pivot: {x: .5, y: .888888896}
+    - name: LittleOldLady (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 191
+        width: 120
+        height: 144
+      alignment: 9
+      pivot: {x: .5, y: .888888896}
+    - name: BikerMan_Armv1 (CustomersPacker)
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 833
+        width: 112
+        height: 88
+      alignment: 9
+      pivot: {x: .785714269, y: 1.4545455}
+  spritePackingTag: 
+  userData: 
