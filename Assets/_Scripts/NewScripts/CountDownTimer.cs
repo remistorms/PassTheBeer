@@ -9,7 +9,7 @@ public class CountDownTimer : MonoBehaviour {
 	private float displaySeconds;
 	private float displayMinutes;
 	public int CountDownSeconds=120;
-	private float Timeleft;
+	public static float Timeleft;
 	string timetext;
 	public bool isTimeUp = false;
 	public UILabel myTimerLabel;

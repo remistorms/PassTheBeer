@@ -19,15 +19,29 @@ public class Control : MonoBehaviour {
 	public Transform customerSpawner;
 	public Transform drinkSpawner;
 	public bool isTimed = false;
+	public static bool paused = false;
 
 	// Other variables
 	public bool drinkServed = false;
 	GameObject spawnedDrink;
 	GameObject displayedDrink;
 
+	void OnLevelWasLoaded()
+	{
+		ResetScene();
+	}
+
+	public void ResetScene()
+	{
+		// Reset all values here
+		playerScore = 0;
+		CountDownTimer.Timeleft = 120;
+		paused = false;
+	}
 
 	void Awake()
 	{
+		ResetScene();
 
 		if (isTimed) 
 		{
@@ -63,6 +77,20 @@ public class Control : MonoBehaviour {
 				drinkServed = true;
 			}
 
+	}
+	public static void PauseGame(bool isPaused)
+	{
+		if (isPaused == false)
+		{
+			Time.timeScale = 1f;
+			isPaused = false;
+		}
+		else
+		{
+			Time.timeScale = 0f;
+			isPaused = true;
+			
+		}
 	}
 
 	public void Update()

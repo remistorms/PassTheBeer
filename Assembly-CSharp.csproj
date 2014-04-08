@@ -756,7 +756,9 @@
      <Compile Include="Assets\_Scripts\NewScripts\DrinksContainer.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\LevelSelectButton.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\LevelStats.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\LoadSceneButton.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\MainMenu.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\PauseButton.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\PowerCharge.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\ScoreScriptDisplay.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\ScreenOrient.cs" />
