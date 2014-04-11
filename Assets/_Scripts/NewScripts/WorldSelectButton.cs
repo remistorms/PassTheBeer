@@ -13,7 +13,7 @@ public class WorldSelectButton : MonoBehaviour {
 
 	void OnClick()
 	{
-		myMainMenuRef.WorldSelect(worldPanelID);
+		myMainMenuRef.PanelSelect(worldPanelID);
 	}
 
 }

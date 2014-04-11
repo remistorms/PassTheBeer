@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
-
-	public GameObject mainMenu;
-	public GameObject[] worldSelect;
+	
+	public GameObject[] panelMenu;
 
 
 	void Start()
@@ -19,27 +18,24 @@ public class MainMenu : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
-
-
-
 		//Disables world select pannels 
-		for (int i = 0; i < worldSelect.Length; i++) 
+		for (int i = 0; i < panelMenu.Length; i++) 
 			{
-			worldSelect[i].SetActive(false);
+			panelMenu[i].SetActive(false);
 			}
 
 		//Enables main menu panel
-		mainMenu.SetActive(true);
+		panelMenu[0].SetActive(true);
 	}
 
-	public void WorldSelect(int panelID)
+	public void PanelSelect(int panelID)
 	{
-		mainMenu.SetActive(false);
+	
 		//Disables world select pannels 
-		for (int i = 0; i < worldSelect.Length; i++) 
+		for (int i = 0; i < panelMenu.Length; i++) 
 		{
-			worldSelect[i].SetActive(false);
+			panelMenu[i].SetActive(false);
 		}
-		worldSelect[panelID].SetActive(true);
+		panelMenu[panelID].SetActive(true);
 	}
 }
