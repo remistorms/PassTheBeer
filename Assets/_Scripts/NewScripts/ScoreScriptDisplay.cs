@@ -17,6 +17,6 @@ public class ScoreScriptDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		myScoreLabel.text = "$ " + myControlRef.playerScore.ToString();
+		myScoreLabel.text = "$ " + Control.playerScore.ToString("F2");
 	}
 }

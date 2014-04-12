@@ -9,6 +9,7 @@ public class Drink : MonoBehaviour {
 	public string name;
 	public float price;
 	public float weight;
+	public bool hasBeenThrown = false;
 
 	// Components needed (WONT BE PUBLIC)
 	public SpriteRenderer drink_Renderer;
@@ -30,12 +31,21 @@ public class Drink : MonoBehaviour {
 
 	void Update()
 	{
-		if (drink_RigidBody != null) {
-			if (drink_RigidBody.velocity.x == 0) {
+
+		if (drink_RigidBody != null) 
+		
+		{
+			if (drink_RigidBody.velocity.x > 0) 
+			{
+				hasBeenThrown = true;
+			}
+			if (drink_RigidBody.velocity.x == 0 && hasBeenThrown == true) 
+			{
 				//Destroys Object after stops
+				hasBeenThrown = false;
 				StartCoroutine(SelfDestroy());
 			}
-				}
+		}
 
 	}
 

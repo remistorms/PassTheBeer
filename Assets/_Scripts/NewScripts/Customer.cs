@@ -10,6 +10,8 @@ public class Customer : MonoBehaviour {
 	public DrinkAnimationScript myDrinkAnimationRef;
 	public CustomerTimer myCustomerTimerRef;
 
+	public GameObject tipSpritePrefab;
+
 	// Public Variables
 	public string name;
 	public float walkSpeed = 2.5f;
@@ -78,7 +80,7 @@ public class Customer : MonoBehaviour {
 		myControlRef.DisplayDrink(drinkWanted, spawnPoint);
 		//Time to wait before leaving the seat
 		float timeToWaitBeforeLeave = Random.Range(10.0f, 20.0f);
-		Debug.Log(timeToWaitBeforeLeave);
+		//Debug.Log(timeToWaitBeforeLeave);
 		myCustomerTimerRef.WaitingTime(timeToWaitBeforeLeave);
 		yield return new WaitForSeconds(timeToWaitBeforeLeave);
 
@@ -114,6 +116,7 @@ public class Customer : MonoBehaviour {
 			if (drinkReceived.name == drinkWanted.name) 
 				
 			{
+				CalculateTip();
 				//Stops drink from dissapearing
 				Drink otherDrinkRef = drinkReceived.GetComponent<Drink>();
 				otherDrinkRef.StopAllCoroutines();
@@ -127,7 +130,7 @@ public class Customer : MonoBehaviour {
 				//Stops the beer from destroying itself
 
 				//Pays for the drink
-				myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
+				Control.playerScore += drinkReceived.GetComponent<Drink>().price;
 
 				// Destroys drink received
 				//Destroy(drinkReceived);
@@ -144,7 +147,7 @@ public class Customer : MonoBehaviour {
 			{
 				//Pays for the drink
 			myDrinkAnimationRef.BottomsUp(drinkReceived);
-			myControlRef.playerScore += drinkReceived.GetComponent<Drink>().price;
+			Control.playerScore += drinkReceived.GetComponent<Drink>().price;
 
 			Leave();
 			}
@@ -163,5 +166,42 @@ public class Customer : MonoBehaviour {
 
 	}
 
+	public void CalculateTip()
+	{
+		float tip = 0;
+		float distanceFromDrink = Mathf.Abs(thisCustomer.transform.position.x - drinkReceived.transform.position.x);
+		Debug.Log("Distance from Drink = " + distanceFromDrink);
+
+		if (distanceFromDrink > 0.7f) 
+			{
+				// TIP = 0%
+				tip = 0;
+
+				 GameObject myTipSprite = (GameObject)Instantiate(tipSpritePrefab, thisCustomer.transform.position, thisCustomer.transform.rotation);
+				myTipSprite.GetComponent<TipSpriteScript>().SpawnPercentage(0);
+				
+				
+			}
+
+		if (distanceFromDrink <= 0.7f && distanceFromDrink > 0.2f) 
+			{
+				// TIP = 10 %
+				tip = (drinkWanted.GetComponent<Drink>().price) * 0.1f;
+			GameObject myTipSprite = (GameObject)Instantiate(tipSpritePrefab, thisCustomer.transform.position, thisCustomer.transform.rotation);
+			myTipSprite.GetComponent<TipSpriteScript>().SpawnPercentage(10);
+			}
+
+		if (distanceFromDrink <= 0.2f && distanceFromDrink >= 0) 
+			{ 
+				// TIP = 25 %
+				tip = (drinkWanted.GetComponent<Drink>().price) * 0.25f;
+			GameObject myTipSprite = (GameObject)Instantiate(tipSpritePrefab, thisCustomer.transform.position, thisCustomer.transform.rotation);
+			myTipSprite.GetComponent<TipSpriteScript>().SpawnPercentage(25);
+				
+			}
+		Debug.Log(tip);
+		Control.playerScore += tip;
+
+	}
 
 }

@@ -766,6 +766,7 @@
      <Compile Include="Assets\_Scripts\NewScripts\ScreenOrient.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\Seats.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\StartGameButton.cs" />
+     <Compile Include="Assets\_Scripts\NewScripts\TipSpriteScript.cs" />
      <Compile Include="Assets\_Scripts\NewScripts\WorldSelectButton.cs" />
      <Compile Include="Assets\_Scripts\SeatsScript.cs" />
      <Compile Include="Assets\_Scripts\SelfDestroy.cs" />

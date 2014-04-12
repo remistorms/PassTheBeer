@@ -13,7 +13,7 @@ public class Control : MonoBehaviour {
 
 	//Public variables
 	//float baseForce = 1;
-	public float playerScore;
+	public static float playerScore;
 	public float forceMultiplier;
 	public GameObject[] customers;
 	public Transform customerSpawner;
@@ -127,7 +127,7 @@ public class Control : MonoBehaviour {
 			drinkServed = false;
 
 			//This makes the drink disapear
-			//StartCoroutine(SelfDestroy(spawnedDrink));
+			StartCoroutine(SelfDestroy(spawnedDrink));
 
 		}
 
